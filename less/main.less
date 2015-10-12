@@ -1,0 +1,79 @@
+html,body {
+  font-size: 16px;
+  width: 320px;
+}
+
+div {
+  box-sizing: border-box;
+}
+#chordStream {
+  width: 3rem;
+  float: left;
+  height: 21rem;
+  position: relative;
+}
+#chordStreamCurrentChord {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+.chordStreamChild {
+  z-index: 0;
+}
+#chordFingering {
+  float: left;
+}
+.chordName {
+  margin-left: 1rem;
+  height: 1rem;
+}
+.chord {
+  border-width: 1px 0 0 0;
+  border-color: black;
+  border-style: solid;
+  width: 9rem;
+  margin: 1rem 0 0 1rem;
+}
+.line {
+  height: 1.5rem;
+  border-bottom: 1px black solid;
+  border-left: 3px black solid;
+}
+.fret {
+  border-right: 1px black solid;
+  width: 2rem;
+  height: 1.5rem;
+  float: left;
+  position: relative;
+}
+.line4 {
+  border-bottom: none;
+  border-left: none;
+  padding-left: 3px;
+}
+.line4 .fret {
+  border-right: none;
+}
+
+.finger {
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size:;
+  border: 1px black solid;
+  border-radius: .6rem;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  left: 0.3rem;
+  top: -0.6rem;
+  display: none;
+}
+
+#slider {
+  margin-top: 1rem;
+  margin-left: 10%;
+  width: 80%;
+}

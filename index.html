@@ -1,0 +1,142 @@
+<html>
+<meta name="viewport" content="width=320, user-scalable=no">
+<link rel="stylesheet/less" type="text/css" href="less/main.less">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="js/fingering.js"></script>
+<script src="js/preset-song.js"></script>
+<script src="js/main.js"></script>
+
+tempo: <input type="text" id="tempo" size="4" value="60">
+<button id="startButton">START</button><br>
+<div id="slider"></div>
+<br>
+<div id="chordStream">
+  <div id="chordStreamCurrentChord"></div>
+</div>
+<div id="chordFingering">
+  <div id="currentChordName" class="chordName"></div>
+  <div class="chord" id="currentChord">
+    <div class="line">
+      <div class="fret">
+        <div class="finger" data-finger-position="1-1"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="1-2"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="1-3"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="1-4"></div>
+      </div>
+    </div>
+    <div class="line">
+      <div class="fret">
+        <div class="finger" data-finger-position="2-1"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="2-2"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="2-3"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="2-4"></div>
+      </div>
+    </div>
+    <div class="line">
+      <div class="fret">
+        <div class="finger" data-finger-position="3-1"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="3-2"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="3-3"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="3-4"></div>
+      </div>
+    </div>
+    <div class="line line4">
+      <div class="fret">
+        <div class="finger" data-finger-position="4-1"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="4-2"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="4-3"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="4-4"></div>
+      </div>
+    </div>
+  </div>
+  Next
+  <div id="nextChordName" class="chordName"></div>
+  <div class="chord" id="nextChord">
+    <div class="line">
+      <div class="fret">
+        <div class="finger" data-finger-position="1-1"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="1-2"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="1-3"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="1-4"></div>
+      </div>
+    </div>
+    <div class="line">
+      <div class="fret">
+        <div class="finger" data-finger-position="2-1"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="2-2"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="2-3"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="2-4"></div>
+      </div>
+    </div>
+    <div class="line">
+      <div class="fret">
+        <div class="finger" data-finger-position="3-1"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="3-2"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="3-3"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="3-4"></div>
+      </div>
+    </div>
+    <div class="line line4">
+      <div class="fret">
+        <div class="finger" data-finger-position="4-1"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="4-2"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="4-3"></div>
+      </div>
+      <div class="fret">
+        <div class="finger" data-finger-position="4-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</html>
