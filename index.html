@@ -1,5 +1,6 @@
 <html>
 <meta name="viewport" content="width=320, user-scalable=no">
+<meta charset="utf-8">
 <link rel="stylesheet/less" type="text/css" href="less/main.less">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
 
@@ -10,11 +11,12 @@
 <script src="js/fingering.js"></script>
 <script src="js/preset-song.js"></script>
 <script src="js/main.js"></script>
-
 tempo: <input type="text" id="tempo" size="4" value="60">
+<select id="songSelect">
+</select>
 <button id="startButton">START</button><br>
 <div id="slider"></div>
-<br>
+<div id="lyric"></div>
 <div id="chordStream">
   <div id="chordStreamCurrentChord"></div>
 </div>
@@ -139,4 +141,8 @@ tempo: <input type="text" id="tempo" size="4" value="60">
     </div>
   </div>
 </div>
+<br clear="all">
+import song data: <textarea id="songJsonTextarea" cols=5 rows=1></textarea>
+<button id="importSongButton">import</button><button id="importSongClearButton">clear</button><br>
+
 </html>

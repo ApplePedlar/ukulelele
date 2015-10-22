@@ -1,160 +1,112 @@
 //-- preset song data --
-var chords = [
+var presetSongs = [
+  {
+    "name": "ふるさと(preset)",
+    "tempo": 82,
+    "chords": [
       // Prelude
-      { "chord":"N.C", "length":12 },
-      { "chord":"F", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"F", "length":2 },
+      { "chord":"N.C", "length":24 },
+      { "chord":"D", "length":2 },
       { "chord":"G", "length":2 },
+      { "chord":"D", "length":2 },
+      { "chord":"Em", "length":6 },
+      { "chord":"Am", "length":4 },
+      { "chord":"D7", "length":2 },
+      { "chord":"G", "length":6 },
       
-      // A1
-      { "chord":"C", "length":12 },
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"G", "length":4 },
-      
-      // A2
-      { "chord":"C", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":2 },
-      { "chord":"G7", "length":2 },
-      { "chord":"C", "length":4 },
+      // A
+      { "chord":"G", "length":6 },
+      { "chord":"D", "length":6 },
+      { "chord":"G", "length":12 },
       
       // B
-      { "chord":"F", "length":4 },
-      { "chord":"Fm", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"D", "length":8 },
-      { "chord":"G", "length":4 },
-      { "chord":"Gsus4", "length":2 },
+      { "chord":"C", "length":6 },
+      { "chord":"G", "length":6 },
+      { "chord":"D7", "length":6 },
+      { "chord":"G", "length":6 },
+      
+      // C
+      { "chord":"D", "length":6 },
+      { "chord":"G", "length":6 },
+      { "chord":"D7", "length":6 },
+      { "chord":"G", "length":6 },
+      
+      // D
+      { "chord":"D", "length":2 },
       { "chord":"G", "length":2 },
+      { "chord":"D", "length":2 },
+      { "chord":"Em", "length":6 },
+      { "chord":"Am", "length":4 },
+      { "chord":"D7", "length":2 },
+      { "chord":"G", "length":6 },
       
-      // C1
-      { "chord":"C", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"D7", "length":4 },
-      { "chord":"G", "length":4 },
+      // A
+      { "chord":"G", "length":6 },
+      { "chord":"D", "length":6 },
+      { "chord":"G", "length":12 },
       
-      // C2
-      { "chord":"C", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"F", "length":2 },
-      { "chord":"G7", "length":2 },
-      { "chord":"C", "length":12 },
+      // B
+      { "chord":"C", "length":6 },
+      { "chord":"G", "length":6 },
+      { "chord":"D7", "length":6 },
+      { "chord":"G", "length":6 },
       
-      // A1'
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"G", "length":4 },
+      // C
+      { "chord":"D", "length":6 },
+      { "chord":"G", "length":6 },
+      { "chord":"D7", "length":6 },
+      { "chord":"G", "length":6 },
       
-      // A2'
-      { "chord":"C", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":2 },
-      { "chord":"G7", "length":2 },
-      { "chord":"C", "length":4 },
-      
-      // B'
-      { "chord":"F", "length":4 },
-      { "chord":"Fm", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"D", "length":8 },
-      { "chord":"G", "length":4 },
-      { "chord":"Gsus4", "length":2 },
+      // D
+      { "chord":"D", "length":2 },
       { "chord":"G", "length":2 },
-      
-      // C1'
-      { "chord":"C", "length":4 },
-      { "chord":"G", "length":4 },
+      { "chord":"D", "length":2 },
+      { "chord":"Em", "length":6 },
       { "chord":"Am", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"D7", "length":4 },
-      { "chord":"G", "length":4 },
+      { "chord":"D7", "length":2 },
+      { "chord":"G", "length":6 },
       
-      // C2'
-      { "chord":"C", "length":4 },
-      { "chord":"G", "length":4 },
+      // A
+      { "chord":"G", "length":6 },
+      { "chord":"D", "length":6 },
+      { "chord":"G", "length":12 },
+      
+      // B
+      { "chord":"C", "length":6 },
+      { "chord":"G", "length":6 },
+      { "chord":"D7", "length":6 },
+      { "chord":"G", "length":6 },
+      
+      // C
+      { "chord":"D", "length":6 },
+      { "chord":"G", "length":6 },
+      { "chord":"D7", "length":6 },
+      { "chord":"G", "length":6 },
+      
+      // D
+      { "chord":"D", "length":2 },
+      { "chord":"G", "length":2 },
+      { "chord":"D", "length":2 },
+      { "chord":"Em", "length":6 },
       { "chord":"Am", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"F", "length":2 },
-      { "chord":"G7", "length":2 },
-      { "chord":"F", "length":4 },
+      { "chord":"D7", "length":2 },
+      { "chord":"G", "length":6 },
       
-      // Interlude
-      { "chord":"G", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"D7", "length":8 },
-      { "chord":"G", "length":8 },
-      
-      // C3
-      { "chord":"C", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"D7", "length":4 },
-      { "chord":"G", "length":4 },
-      
-      // C4
-      { "chord":"C", "length":4 },
-      { "chord":"G", "length":4 },
-      { "chord":"Am", "length":4 },
-      { "chord":"Em", "length":4 },
-      { "chord":"F", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"F", "length":2 },
-      { "chord":"G7", "length":2 },
-      { "chord":"C", "length":4 },
-      
-      // C5
-      { "chord":"F", "length":4 },
-      { "chord":"C", "length":4 },
-      { "chord":"F", "length":2 },
-      { "chord":"G7", "length":2 },
-      { "chord":"F", "length":8 },
-      
-      // Postlude
-      { "chord":"C", "length":8 },
-      { "chord":"F", "length":8 },
-      { "chord":"C", "length":8 },
-      { "chord":"F", "length":8 },
-      { "chord":"Fm", "length":8 },
-      { "chord":"C", "length":8 },
-      
-  ];
+    ],
+    "lyrics": [
+      { "lyric": "", "length": 48 },
+      { "lyric": "兎追いしかの山", "length": 24 },
+      { "lyric": "小鮒釣りしかの川", "length": 24 },
+      { "lyric": "夢は今もめぐりて", "length": 24 },
+      { "lyric": "忘れがたきふるさと", "length": 24 },
+      { "lyric": "如何にいます父母", "length": 24 },
+      { "lyric": "恙無しや友垣", "length": 24 },
+      { "lyric": "雨に風につけても", "length": 24 },
+      { "lyric": "思い出ずるふるさと", "length": 24 },
+      { "lyric": "志を　果たして", "length": 24 },
+      { "lyric": "いつの日にか帰らん", "length": 24 },
+      { "lyric": "山はあおきふるさと", "length": 24 },
+      { "lyric": "水は清きふるさと", "length": 24 },
+    ]
+  }
+];
