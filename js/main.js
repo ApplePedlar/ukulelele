@@ -105,8 +105,8 @@ $(function() {
 
     var currentChordName = chords[chordsIndex].chord;
     var lengthOfChord = chords[chordsIndex].length;
-    var currentLyric = lyrics[lyricsIndex].lyric || "";
-    var lengthOfLyric = lyrics[lyricsIndex].length || 0;
+    var currentLyric = lyrics[lyricsIndex].lyric;
+    var lengthOfLyric = lyrics[lyricsIndex].length;
     
     // show chord
     $("#currentChordName").text(currentChordName + " - " + (posOfChord + 1) + "/" + lengthOfChord);
@@ -162,7 +162,7 @@ $(function() {
     }
     
     posOfLyric++;
-    if (lengthOfLyric == posOfLyric) {
+    if (lengthOfLyric == posOfLyric && lyricsIndex < lyrics.length - 1) {
       lyricsIndex++;
       posOfLyric = 0;
     }

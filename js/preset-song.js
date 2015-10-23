@@ -108,5 +108,27 @@ var presetSongs = [
       { "lyric": "山はあおきふるさと", "length": 24 },
       { "lyric": "水は清きふるさと", "length": 24 },
     ]
+  },
+  {
+    "name": "Happy Birthday(preset)",
+    "tempo": 80,
+    "chords": [
+      { "chord":"N.C", "length":12 },
+      { "chord":"G", "length":6 },
+      { "chord":"D7", "length":12 },
+      { "chord":"G", "length":12 },
+      { "chord":"D7", "length":10 },
+      { "chord":"C", "length":2 },
+      { "chord":"G", "length":4 },
+      { "chord":"D7", "length":2 },
+      { "chord":"G", "length":12 }
+    ],
+    "lyrics": [
+      { "lyric": "", "length": 8 },
+      { "lyric": "ハッピーバースデートゥーユー", "length": 12 },
+      { "lyric": "ハッピーバースデートゥーユー", "length": 12 },
+      { "lyric": "ハッピーバースデーディア○○○", "length": 18 },
+      { "lyric": "ハッピーバースデートゥーユー", "length": 18 }
+    ]
   }
 ];
