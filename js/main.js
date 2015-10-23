@@ -32,6 +32,7 @@ $(function() {
   var posOfLyric = 0;
   var timerId = 0;
   var sliderMoving = false;
+  var immediatelyAfterBeginning;
   
   // ---- song select ----
   initSong();
@@ -89,12 +90,12 @@ $(function() {
     
     tempo = $("#tempo").val() || 100;
     $("#tempo").prop("disabled", true);
-    
-    timerId = setInterval(play, 60000 / tempo / 2);// 8 beat
     $("#startButton").text("STOP");
     $("#chordStreamCurrentChord").text("");
     $("#lyric").text("");
     
+    immediatelyAfterBeginning = true;
+    timerId = setInterval(play, 60000 / tempo / 2);// 8 beat
   });
 
   var play = function() {
@@ -134,25 +135,22 @@ $(function() {
     showFingering(nextFingering, $("#nextChord"));
     
     // chord stream
-    var tmpPos = pos;
-    for (var i = 0; i < chords.length; i++) {
-      tmpPos -= chords[i].length;
-      if (tmpPos == -24) {
-        if (i < chords.length - 1) {
-          // add object
-          var chord = chords[i + 1];
-          $("#chordStream").append('<div class="chordStreamChild"></div>');
-          var chordObj = $(".chordStreamChild:last");
-          chordObj.css("position", "absolute");
-          chordObj.css("top", "20rem");
-          chordObj.text(chord.chord);
-          var animateDuration = 60 / tempo * 12 * 1000;
-          chordObj.animate({"top": 0}, {"duration": animateDuration, easing: "linear"});
+    if (immediatelyAfterBeginning) {
+      initChordStream();
+    } else {
+      var tmpPos = pos;
+      for (var i = 0; i < chords.length; i++) {
+        tmpPos -= chords[i].length;
+        if (tmpPos == -24) {
+          if (i < chords.length - 1) {
+            // add object
+            var chord = chords[i + 1];
+            addChordStreamChild(chord, 24);
+          }
+          break;
+        } else if (tmpPos == 0) {
+          $("#chordStreamCurrentChord").text(currentChordName);
         }
-        break;
-      } else if (tmpPos == 0) {
-        $(".chordStreamChild:first").remove();
-        $("#chordStreamCurrentChord").text(currentChordName);
       }
     }
     
@@ -173,6 +171,8 @@ $(function() {
     if (pos == duration) {
       stopPlay();
     }
+    
+    immediatelyAfterBeginning = false;
   }
   
   $("#slider").slider({
@@ -196,6 +196,7 @@ $(function() {
       tempo = $("#tempo").val() || 60;
       
       sliderMoving = false;
+      immediatelyAfterBeginning = true;
     }
   });
 
@@ -249,6 +250,35 @@ $(function() {
     $("#tempo").prop("disabled", false);
     $(".chordStreamChild").remove();
     $("#startButton").text("START");
+  }
+  
+  function initChordStream() {
+    $(".chordStreamChild").remove();
+    $("#chordStreamCurrentChord").text(chords[chordsIndex].chord);
+    
+    var tmpPos = pos;
+    for (var i = 0; i < chords.length; i++) {
+      tmpPos -= chords[i].length;
+      if (tmpPos < 0 && tmpPos >= -24) {
+        if (i < chords.length - 1) {
+          // add object
+          var chord = chords[i + 1];
+          addChordStreamChild(chord, -tmpPos);
+        }
+      } else if (tmpPos < -24) {
+        break;
+      }
+    }
+  }
+  
+  function addChordStreamChild(chord, pos) {
+    $("#chordStream").append('<div class="chordStreamChild"></div>');
+    var chordObj = $(".chordStreamChild:last");
+    chordObj.css("position", "absolute");
+    chordObj.css("top", (pos * 20 / 24) + "rem");
+    chordObj.text(chord.chord);
+    var animateDuration = 60 / tempo * pos * 12 / 24 * 1000;
+    chordObj.animate({"top": 0}, {"duration": animateDuration, easing: "linear"});
   }
 
   

@@ -5,7 +5,7 @@ var presetSongs = [
     "tempo": 82,
     "chords": [
       // Prelude
-      { "chord":"N.C", "length":24 },
+      { "chord":"N.C", "length":12 },
       { "chord":"D", "length":2 },
       { "chord":"G", "length":2 },
       { "chord":"D", "length":2 },
@@ -94,7 +94,7 @@ var presetSongs = [
       
     ],
     "lyrics": [
-      { "lyric": "", "length": 48 },
+      { "lyric": "", "length": 34 },
       { "lyric": "兎追いしかの山", "length": 24 },
       { "lyric": "小鮒釣りしかの川", "length": 24 },
       { "lyric": "夢は今もめぐりて", "length": 24 },
