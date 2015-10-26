@@ -152,6 +152,10 @@ $(function() {
           $("#chordStreamCurrentChord").text(currentChordName);
         }
       }
+      
+      if (pos % 2 == 0) {
+        addChordStreamLine(24);
+      }
     }
     
     // loop end process
@@ -249,11 +253,13 @@ $(function() {
     timerId = 0;
     $("#tempo").prop("disabled", false);
     $(".chordStreamChild").remove();
+    $(".chordStreamLine").remove();
     $("#startButton").text("START");
   }
   
   function initChordStream() {
     $(".chordStreamChild").remove();
+    $(".chordStreamLine").remove();
     $("#chordStreamCurrentChord").text(chords[chordsIndex].chord);
     
     var tmpPos = pos;
@@ -269,6 +275,9 @@ $(function() {
         break;
       }
     }
+    for (var i = 0; i <= 24; i += 2) {
+      addChordStreamLine(i);
+    }
   }
   
   function addChordStreamChild(chord, pos) {
@@ -281,6 +290,14 @@ $(function() {
     chordObj.animate({"top": 0}, {"duration": animateDuration, easing: "linear"});
   }
 
+  function addChordStreamLine(pos) {
+    $("#chordStream").append('<div class="chordStreamLine">──</div>');
+    var lineObj = $(".chordStreamLine:last");
+    lineObj.css("position", "absolute");
+    lineObj.css("top", (pos * 20 / 24) + "rem");
+    var animateDuration = 60 / tempo * pos * 12 / 24 * 1000;
+    lineObj.animate({"top": 0}, {"duration": animateDuration, easing: "linear"});
+  }
   
 });
 
