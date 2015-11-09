@@ -156,6 +156,17 @@ $(function() {
       if (pos % 2 == 0) {
         addChordStreamLine(24);
       }
+      
+      $(".chordStreamLine:gt(0)").each(function() {
+        if ($(this).css("top") == "0px") {
+          $(this).remove();
+        }
+      });
+      $(".chordStreamChild").each(function() {
+        if ($(this).css("top") == "0px") {
+          $(this).remove();
+        }
+      });
     }
     
     // loop end process
@@ -291,7 +302,7 @@ $(function() {
   }
 
   function addChordStreamLine(pos) {
-    $("#chordStream").append('<div class="chordStreamLine">──</div>');
+    $("#chordStream").append('<div class="chordStreamLine">─</div>');
     var lineObj = $(".chordStreamLine:last");
     lineObj.css("position", "absolute");
     lineObj.css("top", (pos * 20 / 24) + "rem");
